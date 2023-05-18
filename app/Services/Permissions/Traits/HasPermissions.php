@@ -36,4 +36,6 @@ trait HasPermissions{
     public function hasPermission(Permission $permission){
         return $this->permissions->contains($permission);
     }
+
+
 }
