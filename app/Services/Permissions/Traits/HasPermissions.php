@@ -32,4 +32,8 @@ trait HasPermissions{
         $this->permissions()->sync($permissions);
         return $this;
     }
+
+    public function hasPermission(Permission $permission){
+        return $this->permissions->contains($permission);
+    }
 }

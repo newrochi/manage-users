@@ -15,7 +15,8 @@ Route::get('/', function () {
     //return view('welcome');
     //auth()->user()->givePermissionsTo('add users');
     //auth()->user()->withdrawPermissions('delete users');
-    auth()->user()->refreshPermissions('delete users','add users');
+    //dd(auth()->user()->hasPermission('hahahahaha'));
+    dd(auth()->user()->can('hahahahaha'));
 });
 
 Auth::routes();
