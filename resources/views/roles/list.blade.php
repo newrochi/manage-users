@@ -2,27 +2,28 @@
 @section('panel')
 		<div class="card">
 			<div class="card-header">
-				@lang('users.add role')
+				Add Role
 			</div>
 			<div class="card-body">
-			<form method="post" action="{{route('roles.store')}}">
+                {{-- Put action back later --}}
+			<form method="post" action="{{route('roles.store')}} ">
 					@csrf
 					<div class="row">
-						<div class="col-md-5">
-							<input type="text" name="name" class="form-control  " placeholder=" @lang('users.role name') ">
+						<div class="col-md-10">
+							<input type="text" name="name" class="form-control  " placeholder="Role Name">
 							@if($errors->has('name'))
 							<small class="form-text text-danger"> {{$errors->first('name')}} </small>
 							@endif
 						</div>
-						<div class="col-md-5">
+						{{-- <div class="col-md-5">
 							<input type="text"  name="persian_name" class="form-control " placeholder=" @lang('users.role persian name') ">
 							@if($errors->has('persian_name'))
 							<small class="form-text text-danger"> {{$errors->first('persian_name')}} </small>
 							@endif
-						</div>
+						</div> --}}
 						<div class="col-md-2">
 							<button class="btn btn-primary btn-sm">
-							@lang('users.add')
+							    Add Role
 							</button>
 						</div>
 					</div>
@@ -31,28 +32,29 @@
 		</div>
 		<div class="card mt-5">
 			<div class="card-header">
-				@lang('users.show roles')
+				Show Roles
 			</div>
 			<div class="card-body">
 				<table class="table table-striped">
 					<thead>
 						<tr>
-							<th scope="col">@lang('users.role name')</th>
-							<th scope="col"> @lang('users.role persian name') </th>
-							<th scope="col"> @lang('users.operation') </th>
+							<th scope="col">Name</th>
+							{{-- <th scope="col"> @lang('users.role persian name') </th> --}}
+							<th scope="col">Operation</th>
 						</tr>
 					</thead>
 					<tbody>
 						@forelse ($roles as $role)
 						<tr>
 							<td> {{$role->name}} </td>
-							<td> {{$role->persian_name}} </td>
-						<td> <a href="{{route('roles.edit' , $role->id)}}"> @lang('users.edit') </a> </td>
+							{{-- <td> {{$role->persian_name}} </td> --}}
+                            {{-- Put roles.edit route back --}}
+						<td> <a href="">Edit</a> </td>
 						</tr>
 						@empty
 						<p>
-							@lang('users.there are not any role')
-							</p>	
+                            There are no roles.
+						</p>
 						@endforelse
 					</tbody>
 				</table>

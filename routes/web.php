@@ -24,6 +24,8 @@ Route::prefix('panel')->group(function () {
     Route::get('users','UserController@index')->name('users.index');
     Route::get('users/{user}/edit','UserController@edit')->name('users.edit');
     Route::post('users/{user}/edit','UserController@update')->name('users.update');
+    Route::get('roles','RoleController@index')->name('roles.index');
+    Route::post('roles','RoleController@store')->name('roles.store');
 });
 
 Auth::routes();
