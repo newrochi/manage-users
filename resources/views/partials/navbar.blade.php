@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light ">
     <a class="navbar-brand" href="#">
-        <img src="{{asset('img/logo.png')}}" width="30" height="30" class="d-inline-block align-top" alt="">
-        آکادمی
+        <img src="{{asset('img/icon.png')}}" width="30" height="30" class="d-inline-block align-top" alt="user manager">
+        User Manager
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,8 +21,11 @@
                 </a>
                 <div class="dropdown-menu logout-btn" aria-labelledby="navbarDropdown">
                     @can('show panel')
-                <a href="{{route('users.index')}}" class="dropdown-item">@lang('users.panel')</a>
+                        <a href="{{route('users.index')}}" class="dropdown-item">@lang('Users')</a>
                     @endcan
+                    {{-- @role('admin')
+                        <a href="{{route('users.index')}}" class="dropdown-item">@lang('Users')</a>
+                    @endrole --}}
                     <a onclick="event.preventDefault();document.getElementById('logout-form').submit()" class="dropdown-item" href="#">خروج</a>
                 </div>
                 <form id="logout-form" action="/logout" method="POST" style="display: none;">

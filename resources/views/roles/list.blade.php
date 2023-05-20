@@ -49,7 +49,7 @@
 							<td> {{$role->name}} </td>
 							{{-- <td> {{$role->persian_name}} </td> --}}
                             {{-- Put roles.edit route back --}}
-						<td> <a href="">Edit</a> </td>
+						<td> <a href="{{route('roles.edit' , $role->id)}}">Edit</a> </td>
 						</tr>
 						@empty
 						<p>
