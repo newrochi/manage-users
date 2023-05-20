@@ -20,7 +20,7 @@ Route::get('/', function () {
     //dd(auth()->user()->can('delete users'));
 });
 
-Route::prefix('panel')->group(function () {
+Route::prefix('panel')->middleware('role:admin')->group(function () {
     Route::get('users','UserController@index')->name('users.index');
     Route::get('users/{user}/edit','UserController@edit')->name('users.edit');
     Route::post('users/{user}/edit','UserController@update')->name('users.update');
